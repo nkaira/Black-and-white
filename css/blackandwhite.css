@@ -369,6 +369,19 @@ h6 {
   margin: 25px 0 0 0;
 }
 
+.images__arrow {
+  max-height: 50px;
+  max-width: 50px;
+  position: absolute;
+  top: 82.5px;
+}
+
+.images__arrow:active {
+  top: 83.5px;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) inset, 0 2px 3px rgba(0, 0, 0, 0.5) inset, 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
 .images__title {
   padding: 0 0 18px 0;
   color: #838383;
@@ -382,19 +395,21 @@ h6 {
 }
 
 .images__columns-body {
+  width: 810px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.images__slider-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  position: relative;
+  overflow: hidden;
 }
 
 .images__column {
   background: #e8e8e8;
+  margin: 10px 0px 0 120px;
   padding: 12px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -405,6 +420,40 @@ h6 {
           transform: translate(-2px, -8px);
   -webkit-box-shadow: 4px 5px 0 rgba(66, 66, 66, 0.2);
           box-shadow: 4px 5px 0 rgba(66, 66, 66, 0.2);
+}
+
+.icon-left {
+  left: 10px;
+  -webkit-box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(5, 5, 5, 0.2), 4px 1px 4px 2px rgba(5, 5, 5, 0.2);
+          box-shadow: 0 1px rgba(255, 255, 255, 0.2) inset, 0 3px 5px rgba(5, 5, 5, 0.2), 4px 1px 4px 2px rgba(5, 5, 5, 0.2);
+}
+
+.icon-left:hover {
+  -webkit-box-shadow: 2px 2px 4px 4px rgba(5, 5, 5, 0.2);
+          box-shadow: 2px 2px 4px 4px rgba(5, 5, 5, 0.2);
+  cursor: pointer;
+}
+
+.icon-left:active {
+  -webkit-box-shadow: 3px 3px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: 3px 3px 2px rgba(66, 66, 66, 0.2);
+}
+
+.icon-right {
+  right: 10px;
+  -webkit-box-shadow: 0px 1px rgba(255, 255, 255, 0.2) inset, 0px 3px 5px rgba(5, 5, 5, 0.2), -4px 1px 4px 2px rgba(5, 5, 5, 0.2);
+          box-shadow: 0px 1px rgba(255, 255, 255, 0.2) inset, 0px 3px 5px rgba(5, 5, 5, 0.2), -4px 1px 4px 2px rgba(5, 5, 5, 0.2);
+}
+
+.icon-right:hover {
+  -webkit-box-shadow: -2px 2px 4px 4px rgba(5, 5, 5, 0.2);
+          box-shadow: -2px 2px 4px 4px rgba(5, 5, 5, 0.2);
+  cursor: pointer;
+}
+
+.icon-right:active {
+  -webkit-box-shadow: -3px 3px 2px rgba(66, 66, 66, 0.2);
+          box-shadow: -3px 3px 2px rgba(66, 66, 66, 0.2);
 }
 
 .lists {
