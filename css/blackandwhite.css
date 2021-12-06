@@ -404,6 +404,8 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: .35s ease-out;
+  transition: .35s ease-out;
 }
 
 .images__column {

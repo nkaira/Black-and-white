@@ -1,56 +1,49 @@
 'use strict';
 
 let position = 0;
-const itemWidth = 355;
-const slidersToShow = 2;
-const slidersToScroll = 1;
+const ITEM_WIDTH = 355;
+const MOBILE_ITEM_WIDTH = 243;
+const SLIDERS_TO_SHOW = 2;
+const SLIDERS_TO_SCROLL = 1;
+const MOBILES_SLIDERS_TO_SHOW = 1;
+const SLIDER_CONTAINER = 600;
+const SLIDER_CONTAINER_MOBILE = 485;
+const SLIDER_CONTAINER_MINI_MOBILE = 245;
 const container = document.getElementById('slider-container');
 const track = document.getElementById('slider-track');
 const item = document.querySelectorAll('.images__column');
 const btnPrev = document.getElementById('arrow-prev');
 const btnNext = document.getElementById('arrow-next');
 
-console.log(container.clientWidth);
-
 btnPrev.addEventListener('click', btnPrevHandler);
 btnNext.addEventListener('click', btnNextHandler);
 
 function btnPrevHandler(event) {
-    if (container.clientWidth >= 600) {
-        moveLeft(itemWidth);
-    } else if (container.clientWidth <= 500) {
-        const itemWidth = 243;
-        moveLeft(itemWidth);
+    if (container.clientWidth >= SLIDER_CONTAINER) {
+        moveLeft(ITEM_WIDTH);
+    } else if (container.clientWidth <= SLIDER_CONTAINER_MOBILE) {
+        moveLeft(MOBILE_ITEM_WIDTH);
     }
-    sliderAnimation();
 };
 
 function btnNextHandler(event) {
-    if (container.clientWidth >= 600) {
-        moveRight(itemWidth, slidersToShow);
-    } else if (container.clientWidth === 485) {
-        const itemWidth = 243;
-        moveRight(itemWidth, slidersToShow);
-    } else if (container.clientWidth === 245) {
-        const itemWidth = 243;
-        const slidersToShow = 1;
-        moveRight(itemWidth, slidersToShow);
+    if (container.clientWidth >= SLIDER_CONTAINER) {
+        moveRight(ITEM_WIDTH, SLIDERS_TO_SHOW);
+    } else if (container.clientWidth === SLIDER_CONTAINER_MOBILE) {
+        moveRight(MOBILE_ITEM_WIDTH, SLIDERS_TO_SHOW);
+    } else if (container.clientWidth === SLIDER_CONTAINER_MINI_MOBILE) {
+        moveRight(MOBILE_ITEM_WIDTH, MOBILES_SLIDERS_TO_SHOW);
     };
-    sliderAnimation();
 };
 
-const sliderAnimation = () => {
-    track.style.transition = `.35s ease-out`;
-};
-
-const moveLeft = (itemWidth) => {
-    position += itemWidth * slidersToScroll;
+const moveLeft = (ITEM_WIDTH) => {
+    position += ITEM_WIDTH * SLIDERS_TO_SCROLL;
     position = Math.min(position, 0)
     track.style.marginLeft = position + 'px';
 }
 
-const moveRight = (itemWidth, slidersToShow) => {
-    position -= itemWidth * slidersToScroll;
-    position = Math.max(position, -itemWidth * (item.length - slidersToShow));
+const moveRight = (ITEM_WIDTH, SLIDERS_TO_SHOW) => {
+    position -= ITEM_WIDTH * SLIDERS_TO_SCROLL;
+    position = Math.max(position, - ITEM_WIDTH * (item.length - SLIDERS_TO_SHOW));
     track.style.marginLeft = position + 'px';
 }
