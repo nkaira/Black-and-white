@@ -1,4 +1,4 @@
-Welcome to my website. This is my first work.
+Welcome to my website.
 
 Firstly make sure that you have latest version of browser installed. Next clone this repo https://github.com/nkaira/Black-and-white.git.
 
